@@ -46,7 +46,9 @@ jobs:
 
       - name: Secret anzeigen lassen in einer File
         run: |
-          echo "${{ secrets.MEIN_DB_PASSWORD }}" > secret.txt
+          echo "${{ env.TEST }}" > secret.txt
+        env:
+          TEST: ${{ secrets.MEIN_DB_PASSWORD }}
       
       - name: Secret anzeigne lassen in der TXT
         run: cat secret.txt
