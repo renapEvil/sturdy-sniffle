@@ -32,6 +32,8 @@ jobs:
 
       - name: Abfrage von Repo-Variable
         run: echo "Die Repo-Variable ist $NAME"
+        env:
+          NAME: ${{ vars.NAME }}
 
       - name: Variablen
         run: echo "${{ toJson(github) }}"
