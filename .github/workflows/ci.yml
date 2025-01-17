@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  NODE_VERSION: "22.x"
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -31,7 +34,7 @@ jobs:
         run: echo "${{ toJson(github) }}"
       
       - name: Art vom Start des Workflows
-        run: echo Die Workflow wurde durch "${{ github.event_name}}" gestartet
+        run: echo "Die Workflow wurde durch "${{ github.event_name}}" gestartet"
 
       - name: Run a one-line script
         run: echo Hello, world!
@@ -44,7 +47,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: $NODE_VERSION
       
       - name: Überprüfung von Node Version
         run: node --version
