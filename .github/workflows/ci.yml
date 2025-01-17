@@ -46,7 +46,7 @@ jobs:
 
       - name: Secret anzeigen lassen in einer File
         run: |
-          ${{ secrets.MEIN_DB_PASSWORD }} > secret.txt
+          "${{ secrets.MEIN_DB_PASSWORD }}" > secret.txt
           cat secret.txt
 
       
