@@ -61,4 +61,15 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+  # This workflow contains a single job called "build"
+  couscous:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Platzhalter fuer die Umgebungsvariable
+        run: echo "Die Node Version ist $NODE_VERSION"
+
           
