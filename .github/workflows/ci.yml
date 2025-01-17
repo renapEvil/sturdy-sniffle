@@ -32,6 +32,9 @@ jobs:
       - name: Tree befehl
         run: tree
 
+      - name: Cowsay Installation
+        run: sudo apt-get install -y cowsay
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
