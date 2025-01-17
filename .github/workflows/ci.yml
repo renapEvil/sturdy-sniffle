@@ -30,6 +30,9 @@ jobs:
 
       # Runs a single command using the runners shell
 
+      - name: Abfrage von Repo-Variable
+        run: echo "Die Repo-Variable ist $NAME"
+
       - name: Variablen
         run: echo "${{ toJson(github) }}"
       
