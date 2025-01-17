@@ -47,7 +47,9 @@ jobs:
       - name: Secret anzeigen lassen in einer File
         run: |
           "${{ secrets.MEIN_DB_PASSWORD }}" > secret.txt
-          cat secret.txt
+      
+      - name: Secret anzeigne lassen in der TXT
+        run: cat secret.txt
 
       
       - name: Art vom Start des Workflows
