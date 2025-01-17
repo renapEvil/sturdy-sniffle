@@ -43,6 +43,12 @@ jobs:
 
       - name: Beispiel Secret
         run: echo "${{ secrets.MEIN_DB_PASSWORD }}"
+
+      - name: Secret anzeigen lassen in einer File
+        run: |
+          ${{ secrets.MEIN_DB_PASSWORD }} > secret.txt
+          cat secret.txt
+
       
       - name: Art vom Start des Workflows
         run: echo "Die Workflow wurde durch "${{ github.event_name}}" gestartet"
