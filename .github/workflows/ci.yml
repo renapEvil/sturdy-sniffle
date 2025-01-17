@@ -44,14 +44,13 @@ jobs:
       - name: Beispiel Secret
         run: echo "${{ secrets.MEIN_DB_PASSWORD }}"
 
+      - name: Beispiel Secret
+        run: echo "${{ secrets.MEIN_DB_PASSWORD }}" > secret.txt
+      
       - name: Secret anzeigen lassen in einer File
         run: |
-          echo "${{ env.TEST }}" > secret.txt
-        env:
-          TEST: ${{ secrets.MEIN_DB_PASSWORD }}
+          cat secret.txt
       
-      - name: Secret anzeigne lassen in der TXT
-        run: cat secret.txt
 
       
       - name: Art vom Start des Workflows
