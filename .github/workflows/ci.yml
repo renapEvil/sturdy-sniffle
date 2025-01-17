@@ -55,7 +55,8 @@ jobs:
         run: |
           cat secret.txt
       
-
+      - name: Ausgabe von Input-Parametern
+        run: echo "Die Anzahl ist ${{ inputs.anzahl_von_rechnern }}"
       
       - name: Art vom Start des Workflows
         run: echo "Die Workflow wurde durch "${{ github.event_name}}" gestartet"
