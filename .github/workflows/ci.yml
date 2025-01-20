@@ -76,6 +76,9 @@ jobs:
 
       - name: Platzhalter für die Umgebungsvariablen
         run: echo "Die Node Version ist $NODE_VERSION"
+
+      - name: Platzhalter für die Umgebungsvariablen 2
+        run: echo "Die Node Version ist $NODE_VERSION"
       
       - name: Überprüfung von Node Version
         run: node --version
