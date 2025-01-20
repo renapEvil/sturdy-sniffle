@@ -10,9 +10,12 @@ on:
 jobs:
     job1:
         runs-on: ubuntu-latest
+        outputs: 
+            output1: ${{ steps.schritt1.outputs.test }}
+
         steps:
-            - name: Schritt 1 Job 1
-              run: echo "Hallo aus Job 1"
+            - id: schritt1
+              run: echo "test=hallo" >> "$GITHUB_OUTPUT"
 
 
             
@@ -20,5 +23,7 @@ jobs:
     job2:
         runs-on: ubuntu-latest
         steps:
-            - name: Schritt 1 Job 2
+            - name: Verwende den Output von Job1
+              env:
+                OUTPUT1: ${{ needs.job1.ouputs.output1 }}
               run: echo "Hallo aus Job 2"
