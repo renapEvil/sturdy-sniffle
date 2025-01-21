@@ -22,3 +22,15 @@ jobs:
           with:
             name: job1-output
             path: output.txt
+
+    job2:
+      runs-on: ubuntu-latest
+      needs: job1
+      steps:
+        - name: Lade Artefakt herunter
+          uses: actions:download-artifact@v4
+          with:
+            name: job1-output
+
+        - name: Zeige den Inhalt der Datei an
+          run: cat output.txt
