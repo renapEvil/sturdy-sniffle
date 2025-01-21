@@ -28,7 +28,7 @@ jobs:
       needs: job1
       steps:
         - name: Lade Artefakt herunter
-          uses: actions:download-artifact@v4
+          uses: actions/download-artifact@v4
           with:
             name: job1-output
 
